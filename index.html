@@ -45,7 +45,16 @@
              * Invokes the <code>capture</code> function and attaches the canvas element to the DOM.
              */
             function shoot(){
-    
+                var output = document.getElementById('output');
+                var canvas = capture(video, scaleFactor);
+                canvas.onclick = function(){
+                    window.open(this.toDataURL());
+                };
+                snapshots.unshift(canvas);
+                output.innerHTML = '';
+                for(var i=0; i<4; i++){
+                    output.appendChild(snapshots[i]);
+                }
             }
             
             function supportsToDataURL()
@@ -86,19 +95,7 @@
                 heading.textContent+="You browser is lame and does NOT support Canvas.toDataURL();"
             }
 
-            button.onclick = function(){
-
-                var output = document.getElementById('output');
-                var canvas = capture(video, scaleFactor);
-                canvas.onclick = function(){
-                    window.open(this.toDataURL());
-                };
-                snapshots.unshift(canvas);
-                output.innerHTML = '';
-                for(var i=0; i<4; i++){
-                    output.appendChild(snapshots[i]);
-                }
-            };
+            video.addEventListener("click", shoot, true);
             
 
         </script>
