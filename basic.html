@@ -12,7 +12,7 @@
             <header data-role="header"><h1>Basic Camera</h1></header>
             <section data-role="content">
                 <h2 style="text-align: center">Tap to shoot</h2>  
-                <video autoplay="" height="250" width="250" id="video" style="-o-object-fit:cover"></video>
+                <video autoplay="" height="250" width="250" id="video" style="-o-object-fit:cover; text-align: center"></video>
                 <p data-role="button" id="shoot">Shoot!</p>
             </section>
             <footer data-role="footer">Developed by Oliver Smith - <a href="http://chemicaloliver.net">chemicaloliver.net</a></footer>
@@ -23,6 +23,10 @@
             <section data-role="content">
                 <h2 style="text-align: center">Your Photo</h2>  
                 <div id="output" style="text-align: center"></div>
+                <nav data-role="controlgroup">
+                    <a href="#camera" data-role="button">Cancel</a>
+                    <a href="" data-role="button" data-theme="b">Send to Server (Not Implemented)</a>
+                </nav>
             </section>
             <footer data-role="footer">Developed by Oliver Smith - <a href="http://chemicaloliver.net">chemicaloliver.net</a></footer>
         </article>
