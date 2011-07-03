@@ -1,6 +1,6 @@
 # HTML5 getUserMedia Experiments
 
-These files are collected examples of using the getUserMedia JavaScript API (the HTML5 Device API replacement)
+These files are collected examples of using the getUserMedia JavaScript API (the HTML5 Device API replacement), they're also a project where I can experiment with jquery mobile.
 
 ## Requirements
 
