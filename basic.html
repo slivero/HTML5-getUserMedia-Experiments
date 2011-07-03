@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>getUserMedia Demos - Basic Camera</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.css" />
     </head>
-    <body>
-        <h1>Basic Camera</h1>
-        <video autoplay="" height="1200" width="800" id="video"></video>
-        <div id="output" style="display: inline-block; top: 4px; position: relative ;border: dotted 1px #ccc; padding: 2px;"></div>
 
+    <body>
+        <article  data-role="page" id="camera">
+            <header data-role="header"><h1>Basic Camera</h1></header>
+            <section data-role="content">
+                <h2 style="text-align: center">Tap to shoot</h2>  
+                <video autoplay="" height="250" width="250" id="video" style="-o-object-fit:cover"></video>
+                <p data-role="button" id="shoot">Shoot!</p>
+            </section>
+            <footer data-role="footer">Developed by Oliver Smith - <a href="http://chemicaloliver.net">chemicaloliver.net</a></footer>
+        </article>
+
+        <article  data-role="page" id="photos">
+            <header data-role="header"><h1>Basic Camera</h1></header>
+            <section data-role="content">
+                <h2 style="text-align: center">Your Photo</h2>  
+                <div id="output" style="text-align: center"></div>
+            </section>
+            <footer data-role="footer">Developed by Oliver Smith - <a href="http://chemicaloliver.net">chemicaloliver.net</a></footer>
+        </article>
+
+        
+        <script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.js"></script>
         <script type="text/javascript" src="/js/camera.js"></script>
     </body>
 </html>
