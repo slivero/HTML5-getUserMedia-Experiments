@@ -4,7 +4,7 @@ var videoId = 'video';
             
             var video = document.getElementsByTagName('video')[0], 
             heading = document.getElementsByTagName('h1')[0],
-            button = document.getElementById('cap');
+            button = document.getElementById('shoot');
 
             /**
              * Captures a image frame from the provided video element.
@@ -75,13 +75,9 @@ var videoId = 'video';
                     "Native web camera streaming is not supported in this browser!";
             }
             
-            if(supportsToDataURL())
-            {
-                heading.textContent+="You browser is cool and supports Canvas.toDataURL();"
-            }
-            else
+            if(!supportsToDataURL())
             {
                 heading.textContent+="You browser is lame and does NOT support Canvas.toDataURL();"
             }
 
-            video.addEventListener("click", shoot, true);
+            button.addEventListener("click", shoot, true);
