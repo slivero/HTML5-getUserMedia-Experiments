@@ -1,3 +1,5 @@
+
+
 var videoId = 'video';
 var scaleFactor = 1;
 var snapshots = [];
@@ -39,9 +41,19 @@ function shoot(){
     };
     snapshots.unshift(canvas);
     output.innerHTML = '';
+    
+    $('#photos').live('pageshow',function(){
+        for(var i=0; i<4; i++){
+            output.appendChild(snapshots[i]);
+        }
+    });
+    
+    $.mobile.changePage('#photos');
+    
     for(var i=0; i<4; i++){
         output.appendChild(snapshots[i]);
     }
+    
 }
             
 function supportsToDataURL()
