@@ -57,10 +57,12 @@ var videoId = 'video';
             {
                 
                 navigator.getUserMedia('video', successCallback, errorCallback);
+                
                 function successCallback( stream ) 
                 {
                     video.src = stream;
                 }
+                
                 function errorCallback( error ) 
                 {
                     heading.textContent = 
