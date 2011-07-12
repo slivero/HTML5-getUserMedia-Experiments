@@ -1,10 +1,11 @@
 var videoId = 'video';
 var scaleFactor = 0.5;
 var snapshot = null;
-            
+var upload_image;
 var video = document.getElementsByTagName('video')[0], 
 heading = document.getElementsByTagName('h1')[0],
 button = document.getElementById('shoot');
+send_button = document.getElementById('send_button');
 
 /**
  * Captures a image frame from the provided video element.
@@ -38,6 +39,7 @@ function shoot(){
     //load the photo when the new page opens
     $('#photos').live('pageshow',function(){
         $('#output').html(canvas);
+        upload_image = canvas.toDataURL();
     });
     
     //load the photos page
@@ -79,8 +81,14 @@ function supportsGetUserMedia()
     }
 }
 
+function upload()
+{
+    $.post('/upload.php',{img : upload_image}, function(data){
+           alert(data);
+       }) ;
+}
 
-            
+         
 if(supportsGetUserMedia()) 
 {      
     navigator.getUserMedia('video', successCallback, errorCallback);
@@ -104,3 +112,4 @@ if(!supportsToDataURL())
 }
 
 button.addEventListener("click", shoot, true);
+send_button.addEventListener("click", upload, true);
