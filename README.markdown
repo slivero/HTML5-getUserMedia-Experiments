@@ -18,3 +18,7 @@ An index page
 ### basic.html
 
 Currently a basic camera application based on a few sources including http://my.opera.com/core/blog/2011/03/23/webcam-orientation-preview and http://www.sanraul.com/2009/12/17/using-html5-canvas-to-capture-frames-from-a-video/
+
+### upload.php
+
+A simple php script to receive images posted to it and save them as wow.png in the root folder. The web server needs write access to the folder for this to work.
